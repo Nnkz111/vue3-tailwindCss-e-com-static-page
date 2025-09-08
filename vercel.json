@@ -1,12 +1,8 @@
 {
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/.*",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
-  "framework": "vite"
+  "framework": "vite",
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist"
 }

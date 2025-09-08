@@ -12,10 +12,18 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  base: './',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
-    emptyOutDir: true,
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   },
+  server: {
+    host: true,
+    strictPort: true,
+    port: 3000
+  }
 })
